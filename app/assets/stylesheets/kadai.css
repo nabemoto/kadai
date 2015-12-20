@@ -1,0 +1,49 @@
+.pagetitle{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.links{
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  color: #3366cc;
+}
+
+.total_pv{
+  font-size: 30px;
+  font-weight: bold;
+  margin: 30px;
+  border-bottom: solid;
+  width: 150px;
+}
+
+.hr_style{
+  border: 0;
+  height: 2px;
+  background: #333;
+  background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+  background-image:    -moz-linear-gradient(left, #ccc, #333, #ccc);
+  background-image:     -ms-linear-gradient(left, #ccc, #333, #ccc);
+  background-image:      -o-linear-gradient(left, #ccc, #333, #ccc);
+}
+
+.table{
+  width: 400px;
+}
+
+.site_title{
+  margin: 30px 10px;
+}
+
+.sites_pv{
+  font-size: 25px;
+}
+
+.accessed{
+  font-size: 20px;
+  margin: 30px auto;
+}
+
+a:visited { color:#333333; }

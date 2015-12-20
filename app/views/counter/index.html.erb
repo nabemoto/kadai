@@ -1,0 +1,82 @@
+  <div class="container">
+    <div class="row">
+      <h1 class="pagetitle">View Counter</h1>
+
+      <div class="links">
+        <p>This is a website for counting PVs on <strong><%= link_to 'Site1', action: :site1 %></strong> or <strong><%= link_to 'Site2', action: :site2 %></strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+     <p class="total_pv">総PV数: <%= @visit %><p>
+    </div>
+
+  </div>
+  <div class="container">
+    <div class="row">
+        <hr class="hr_style">
+        <h2 class="site_title">Site1's PV</h2>
+    </div>
+  </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th><p class="text-center">No</p></th>
+                <th><p class="text-center">Visited date</p></th>
+              </tr>
+            </thead>
+            <% @site1_views.each.with_index(1) do |view,i| %>
+            <tbody>
+              <tr>
+                <td><p class="text-center"><%= i %></p></td>
+                <td><p class="text-center"><%= view.created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M") %></p></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+          <p class="sites_pv">TOTAL PV：<%= @site1_views.length %></p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <%= line_chart @site1_chart, height: "400px" %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <hr class="hr_style">
+        <h2 class="site_title">Site2's PV</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><p class="text-center">No</p></th>
+              <th><p class="text-center">Visited date</p></th>
+            </tr>
+          </thead>
+          <% @site2_views.each.with_index(1) do |view,i| %>
+          <tbody>
+            <tr>
+              <td><p class="text-center"><%= i %></p></td>
+              <td><p class="text-center"><%= view.created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M") %></p></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      <p class="sites_pv">TOTAL PV：<%= @site2_views.length %></p>
+       </div>
+       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <%= line_chart @site2_chart, height: "400px" %>
+       </div>
+      </div>
+    </div>
